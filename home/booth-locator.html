@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth Locator - Bharat Voting System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/api/placeholder/60/60" alt="Emblem of India" class="emblem">
+                <div class="title-container">
+                    <h1>भारत मतदान प्रणाली</h1>
+                    <h1>Bharat Voting System</h1>
+                </div>
+            </div>
+            <div class="auth-container">
+                <a href="login.html" class="btn-primary">Login</a>
+                <a href="register.html" class="btn-secondary">Register</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="voter-information.html">Voter Information</a></li>
+            <li><a href="verification-process.html">Verification Process</a></li>
+            <li><a href="booth-locator.html" class="active">Booth Locator</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Find Your Voting Booth</h2>
+            
+            <div class="booth-filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="state">State:</label>
+                        <select id="state" class="form-group input">
+                            <option value="">Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="district">District:</label>
+                        <select id="district" class="form-group input">
+                            <option value="">Select District</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="assembly">Assembly Constituency:</label>
+                        <select id="assembly" class="form-group input">
+                            <option value="">Select Assembly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions" style="margin-top: 20px;">
+                    <button type="button" id="findNearMe" class="btn-primary">Find Booths Near Me</button>
+                    <button type="button" id="searchButton" class="btn-secondary">Search</button>
+                </div>
+            </div>
+            
+            <div class="map-container" id="map"></div>
+            
+            <div class="booth-list">
+                <h3>Nearest Voting Booths</h3>
+                <div id="boothResults">
+                    <div class="booth-item">
+                        <div class="booth-name">Govt. Primary School, Sector 14</div>
+                        <div class="booth-address">Sector 14, Near Main Market, New Delhi - 110001</div>
+                        <div class="booth-meta">
+                            <span><i class="fas fa-wheelchair"></i> Accessible</span>
+                            <span><i class="fas fa-clock"></i> Wait Time: 15 mins</span>
+                            <span><i class="fas fa-route"></i> 1.2 km away</span>
+                        </div>
+                    </div>
+                    <div class="booth-item">
+                        <div class="booth-name">Community Center, Block C</div>
+                        <div class="booth-address">Block C, Community Center, Janakpuri, New Delhi - 110058</div>
+                        <div class="booth-meta">
+                            <span><i class="fas fa-wheelchair"></i> Accessible</span>
+                            <span><i class="fas fa-clock"></i> Wait Time: 30 mins</span>
+                            <span><i class="fas fa-route"></i> 2.5 km away</span>
+                        </div>
+                    </div>
+                    <div class="booth-item">
+                        <div class="booth-name">Municipal Corporation School</div>
+                        <div class="booth-address">Near Bus Stand, Karol Bagh, New Delhi - 110005</div>
+                        <div class="booth-meta">
+                            <span><i class="fas fa-wheelchair"></i> Not Accessible</span>
+                            <span><i class="fas fa-clock"></i> Wait Time: 45 mins</span>
+                            <span><i class="fas fa-route"></i> 3.8 km away</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="voter-information.html">Voter Information</a></li>
+                    <li><a href="verification-process.html">Verification Process</a></li>
+                    <li><a href="booth-locator.html">Booth Locator</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Election Commission of India, Nirvachan Sadan, Ashoka Road, New Delhi - 110001</p>
+                <p><i class="fas fa-phone"></i> Toll Free: 1800-111-950</p>
+                <p><i class="fas fa-envelope"></i> support@bharatvoting.gov.in</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <p>Download our mobile app:</p>
+                    <div>
+                        <a href="#" class="app-button"><i class="fab fa-google-play"></i> Google Play</a>
+                        <a href="#" class="app-button"><i class="fab fa-apple"></i> App Store</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Bharat Voting System. All Rights Reserved. | Designed by Election Commission of India
+        </div>
+    </footer>
+
+    <script>
+        // Function to initialize Google Maps
+        function initMap() {
+            // Default location (India)
+            const defaultLocation = { lat: 28.6139, lng: 77.2090 };
+            
+            // Create map centered at default location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: defaultLocation,
+            });
+            
+            // Try to get user's current location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        
+                        // Center map on user's location
+                        map.setCenter(userLocation);
+                        
+                        // Add marker for user's location
+                        new google.maps.Marker({
+                            position: userLocation,
+                            map: map,
+                            icon: {
+                                path: google.maps.SymbolPath.CIRCLE,
+                                fillColor: "#4285F4",
+                                fillOpacity: 1,
+                                strokeColor: "white",
+                                strokeWeight: 2,
+                                scale: 8,
+                            },
+                            title: "Your Location",
+                        });
+                        
+                        // Add sample booth locations
+                        addSampleBooths(map, userLocation);
+                    },
+                    () => {
+                        // Handle location error
+                        console.log("Error: The Geolocation service failed.");
+                        // Still add sample booths around default location
+                        addSampleBooths(map, defaultLocation);
+                    }
+                );
+            } else {
+                // Browser doesn't support Geolocation
+                console.log("Error: Your browser doesn't support geolocation.");
+                addSampleBooths(map, defaultLocation);
+            }
+        }
+        
+        // Function to add sample booth locations
+        function addSampleBooths(map, userLocation) {
+            // Sample booth locations (would be replaced with real data in production)
+            const boothLocations = [
+                { lat: userLocation.lat + 0.01, lng: userLocation.lng + 0.01, name: "Govt. Primary School, Sector 14", address: "Sector 14, Near Main Market", waitTime: "15 mins", distance: "1.2 km", accessible: true },
+                { lat: userLocation.lat - 0.01, lng: userLocation.lng + 0.02, name: "Community Center, Block C", address: "Block C, Community Center, Janakpuri", waitTime: "30 mins", distance: "2.5 km", accessible: true },
+                { lat: userLocation.lat + 0.02, lng: userLocation.lng - 0.01, name: "Municipal Corporation School", address: "Near Bus Stand, Karol Bagh", waitTime: "45 mins", distance: "3.8 km", accessible: false },
+            ];
+            
+            // Add markers for each booth
+            boothLocations.forEach((location) => {
+                const marker = new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.name,
+                    icon: {
+                        url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                    },
+                });
+                
+                // Add info window for each marker
+                const infoContent = `
+                    <div style="width: 250px">
+                        <h3 style="margin: 0 0 5px 0">${location.name}</h3>
+                        <p style="margin: 0 0 5px 0">${location.address}</p>
+                        <p style="margin: 0"><b>Wait Time:</b> ${location.waitTime}</p>
+                        <p style="margin: 0"><b>Distance:</b> ${location.distance}</p>
+                        <p style="margin: 0"><b>Accessibility:</b> ${location.accessible ? 'Accessible' : 'Not Accessible'}</p>
+                    </div>
+                `;
+                
+                const infoWindow = new google.maps.InfoWindow({
+                    content: infoContent,
+                });
+                
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+        
+        // Find Near Me button click handler
+        document.getElementById("findNearMe").addEventListener("click", function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        // In a real app, this would trigger a search around the user's location
+                        alert("Searching for booths near your current location...");
+                    },
+                    () => {
+                        alert("Unable to access your location. Please enable location services in your browser.");
+                    }
+                );
+            } else {
+                alert("Your browser doesn't support geolocation.");
+            }
+        });
+        
+        // Search button click handler
+        document.getElementById("searchButton").addEventListener("click", function() {
+            const state = document.getElementById("state").value;
+            const district = document.getElementById("district").value;
+            const assembly = document.getElementById("assembly").value;
+            
+            if (state === "") {
+                alert("Please select a state to search.");
+                return;
+            }
+            
+            // In a real app, this would trigger a search based on selected filters
+            alert(`Searching for booths in ${state}${district ? ', ' + district : ''}${assembly ? ', ' + assembly : ''}...`);
+        });
+    </script>
+    
+    <!-- Replace YOUR_API_KEY with an actual Google Maps API key in production -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

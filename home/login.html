@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bharat Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/api/placeholder/80/80" alt="Emblem of India" class="emblem">
+                <div class="title-container">
+                    <h1>भारत मतदान प्रणाली</h1>
+                    <h1>Bharat Voting System</h1>
+                </div>
+            </div>
+            <div class="auth-container">
+                <a href="login.html" class="btn-primary">Login</a>
+                <a href="register.html" class="btn-secondary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="voter-information.html">Voter Information</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="booth-locator.html">Booth Locator</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="voterID">Voter ID</label>
+                    <input type="text" id="voterID" name="voterID" placeholder="Enter your Voter ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Login</button>
+                </div>
+                <div class="form-footer">
+                    <p>Forgot your password? <a href="reset-password.html">Reset here</a></p>
+                    <p>Don't have an account? <a href="register.html">Register now</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Bharat Voting System is an initiative to make the electoral process more accessible, transparent, and efficient through technology.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="voter-information.html">Voter Information</a></li>
+                    <li><a href="verification.html">Verification Process</a></li>
+                    <li><a href="booth-locator.html">Booth Locator</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> Helpline: 1800-XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i> Email: support@bharatvoting.gov.in</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: Election Commission of India, New Delhi</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download App</h3>
+                <p>Get the Bharat Voting System app for easy access to all services.</p>
+                <div class="app-download">
+                    <a href="#" class="app-button"><i class="fab fa-google-play"></i> Google Play</a>
+                    <a href="#" class="app-button"><i class="fab fa-apple"></i> App Store</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Bharat Voting System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically handle form submission via AJAX
+            alert('Login functionality would be implemented here.');
+            // For demo purposes, redirect to home
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

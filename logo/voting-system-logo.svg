@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="95" fill="#1E90FF"/>
+    
+    <!-- Stylized Ballot Box -->
+    <rect x="50" y="50" width="100" height="80" rx="10" ry="10" fill="white"/>
+    
+    <!-- Ballot Paper -->
+    <rect x="65" y="65" width="70" height="50" fill="#007FFF"/>
+    
+    <!-- Checkmark -->
+    <path d="M75 100 L90 115 L125 80" stroke="white" stroke-width="10" fill="none"/>
+    
+    <!-- National Flag Colors -->
+    <rect x="50" y="130" width="100" height="20" fill="#FF9933"/>
+    <rect x="50" y="150" width="100" height="20" fill="white"/>
+    <rect x="50" y="170" width="100" height="20" fill="#138808"/>
+    
+    <!-- Emblem-inspired Elements -->
+    <text x="100" y="35" font-family="Arial" font-weight="bold" font-size="20" text-anchor="middle" fill="white">भारत</text>
+</svg>

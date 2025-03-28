@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Bharat Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/api/placeholder/80/80" alt="Emblem of India" class="emblem">
+                <div class="title-container">
+                    <h1>भारत मतदान प्रणाली</h1>
+                    <h1>Bharat Voting System</h1>
+                </div>
+            </div>
+            <div class="auth-container">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="register.html" class="btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="voter-information.html">Voter Information</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="booth-locator.html">Booth Locator</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <h2>Register as a Voter</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="aadhaarNumber">Aadhaar Number</label>
+                    <input type="text" id="aadhaarNumber" name="aadhaarNumber" placeholder="Enter your 12-digit Aadhaar number" maxlength="12" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                </div>
+                <div class="form-group">
+                    <label for="address">Residential Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your residential address" required>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">PIN Code</label>
+                    <input type="text" id="pincode" name="pincode" placeholder="Enter your PIN code" maxlength="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Register</button>
+                </div>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Bharat Voting System is an initiative to make the electoral process more accessible, transparent, and efficient through technology.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="voter-information.html">Voter Information</a></li>
+                    <li><a href="verification.html">Verification Process</a></li>
+                    <li><a href="booth-locator.html">Booth Locator</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> Helpline: 1800-XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i> Email: support@bharatvoting.gov.in</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: Election Commission of India, New Delhi</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Download App</h3>
+                <p>Get the Bharat Voting System app for easy access to all services.</p>
+                <div class="app-download">
+                    <a href="#" class="app-button"><i class="fab fa-google-play"></i> Google Play</a>
+                    <a href="#" class="app-button"><i class="fab fa-apple"></i> App Store</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Bharat Voting System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic password validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Here you would typically handle form submission via AJAX
+            alert('Registration functionality would be implemented here.');
+            // For demo purposes, redirect to verification page
+            window.location.href = 'verification.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth Locator - Bharat Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/api/placeholder/80/80" alt="Emblem of India" class="emblem">
+                <div class="title-container">
+                    <h1>भारत मतदान प्रणाली</h1>
+                    <h1>Bharat Voting System</h1>
+                </div>
+            </div>
+            <div class="auth-container">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="register.html" class="btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="voter-information.html">Voter Information</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="booth-locator.html" class="active">Booth Locator</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Find Your Polling Booth</h2>
+            
+            <div class="booth-filters">
+                <h3>Filter Polling Booths</h3>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state">
+                            <option value="">Select State</option>
+                            <option value="andhra-pradesh">Andhra Pradesh</option>
+                            <option value="assam">Assam</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="district">District</label>
+                        <select id="district" name="district" disabled>
+                            <option value="">Select District</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="constituency">Constituency</label>
+                        <select id="constituency" name="constituency" disabled>
+                            <option value="">Select Constituency</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-row" style="margin-top: 15px;">
+                    <div class="filter-group">
+                        <label for="pincode">PIN Code</label>
+                        <input type="text" id="pincode" name="pincode" placeholder="Enter PIN code">
+                    </div>
+                    <div class="filter-group">
+                        <label for="accessibility">Accessibility</label>
+                        <select id="accessibility" name="accessibility">
+                            <option value="">All Booths</option>
+                            <option value="wheelchair">Wheelchair Accessible</option>
+                            <option value="senior">Senior Citizen Friendly</option>
+                            <option value="braille">Braille Facilities</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="display: flex; align-items: flex-end;">
+                        <button id="searchButton" class="btn-primary" style="width: 100%;">Search Booths</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container" id="mapDisplay">
+                <!-- Map would be loaded here via JavaScript -->
+                <img src="/api/placeholder/1200/500" alt="Map of polling booths">
+            </div>
+            
+            <div class="booth-list">
+                <h3>Polling Booths Near You</h3>
+                
+                <div class="booth-item">
+                    <div class="booth-name">Government Higher Secondary School, Sector 22</div>
+                    <div class="booth-address">Plot No. 45, Sector 22, Delhi - 110022</div>
+                    <div class="booth-meta">
+                        <span><i class="fas fa-wheelchair"></i> Wheelchair Accessible</span>
+                        <span><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM</span>
+                        <span><i class="fas fa-users"></i> Expected Wait: 10-15 min</span>
+                    </div>
+                </div>
+                
+                <div class="booth-item">
+                    <div class="booth-name">Municipal Corporation Primary School, Karol Bagh</div>
+                    <div class="booth-address">23 Ajmal Khan Road, Karol Bagh, Delhi - 110005</div>
+                    <div class="booth-meta">
+                        <span><i class="fas fa-wheelchair"></i> Wheelchair Accessible</span>
+                        <span><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM</span>
+                        <span><i class="fas fa-users"></i> Expected Wait: 20-25 min</span>
+                    </div>
+                </div>
+                
+                <div class="booth-item">
+                    <div class="booth-name">Sarvodaya Kanya Vidyalaya, Janakpuri</div>
+                    <div class="booth-address">Block C-4, Janakpuri, Delhi - 110058</div>
+                    <div class="booth-meta">
+                        <span><i class="fas fa-wheelchair"></i> Wheelchair Accessible</span>
+                        <span><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM</span>
+                        <span><i class="fas fa-users"></i> Expected Wait: 5-10 min</span>
+                    </div>
+                </div>
+                
+                <div class="booth-item">
+                    <div class="booth-name">Delhi Public School, Dwarka</div>
+                    <div class="booth-address">Sector 3, Dwarka, Delhi - 110078</div>
+                    <div class="booth-meta">
+                        <span><i class="fas fa-wheelchair"></i> Wheelchair Accessible</span>
+                        <span><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM</span>
+                        <span><i class="fas fa-users"></i> Expected Wait: 15-20 min</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Live Booth Status</h2>
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <h3>5 min</h3>

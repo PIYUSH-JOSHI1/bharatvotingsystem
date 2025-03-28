@@ -1,0 +1,202 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+}
+
+.screen-1 {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.email, .password {
+  background: #f0f4f8;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email label, .password label {
+  margin-bottom: 10px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.sec-2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sec-2 ion-icon {
+  color: #4a5568;
+  margin-right: 10px;
+}
+
+.sec-2 input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+.login {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.login:hover {
+  transform: scale(1.05);
+}
+
+.login-with-google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #757575;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-with-google-btn:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+}
+
+a {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .screen-1 {
+    padding: 20px;
+    margin: 0 10px;
+  }
+}
+
+
+/* Dropdown Menu Styling */
+#gender {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  appearance: none; /* Removes default browser styling */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="%23333" d="M0 0l5 5 5-5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gender:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+#gender option {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+
+/* Input Field Styling */
+.sec-2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sec-2:hover {
+  border-color: #667eea;
+}
+
+.sec-2 img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.sec-2 input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+}
+
+.sec-2 input::placeholder {
+  color: #aaa;
+}
+
+.sec-2 input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+/* Label Styling */
+.email label, .password label {
+  margin-bottom: 8px;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Section Container Styling */
+.email, .password {
+  background: transparent;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
